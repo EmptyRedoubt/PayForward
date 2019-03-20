@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+	<title>PayForward</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta content="Local Community Aid Software" name="description" />
+	<meta content="local, aid, community, charity" name="keywords" />
+	<meta content="Amber Saladin" name="author" /><!-- 
+	 --><!-- Facebook and Twitter integration -->
+	<meta content="" property="og:title" />
+	<meta content="" property="og:image" />
+	<meta content="" property="og:url" />
+	<meta content="" property="og:site_name" />
+	<meta content="" property="og:description" />
+	<meta content="" name="twitter:title" />
+	<meta content="" name="twitter:image" />
+	<meta content="" name="twitter:url" />
+	<meta content="" name="twitter:card" />
+	<link th:href="@{/css/animate.css}" rel="stylesheet" /><!-- Animate CSS-->
+	<link th:href="@{/css/icomoon.css}" rel="stylesheet" /><!-- Icomoon  -->
+	<link th:href="@{/css/bootstrap.css}" rel="stylesheet" /><!-- Bootstrap -->
+	<link th:href="@{/css/superfish.css}" rel="stylesheet" /><!-- Superfish -->
+	<link th:href="@{/css/style.css}" rel="stylesheet" /><!-- Main styles css --><!-- Modernizr JS --><script th:src="@{js/modernizr-2.6.2.min.js}"></script><!-- FOR IE9 below --><!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div id="fh5co-wrapper">
+<div id="fh5co-page">
+<div class="header-top">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6 text-left fh5co-link">
+<div th:text="${user.username} ? ${user.username} : 'User is not logged in'">User is not logged in</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-6 col-sm-6 text-right fh5co-social">&nbsp;</div>
+</div>
+</div>
+</div>
+
+<header class="sticky-banner" id="fh5co-header-section">
+<div class="container">
+<div class="nav-header">
+<h1 id="fh5co-logo"><a th:href="@{/home}">PayForward</a></h1>
+<!-- START #fh5co-menu-wrap -->
+
+<nav id="fh5co-menu-wrap" role="navigation">
+<ul class="sf-menu" id="fh5co-primary-menu">
+	<li class="active"><a th:href="@{/home}">Home</a></li>
+	<li><a class="fh5co-sub-ddown" th:href="@{/about}">About</a>
+	<ul class="fh5co-sub-menu">
+		<li><a href="#">Clients</a></li>
+		<li><a href="#">Donors</a></li>
+		<li><a href="#">Vendors</a></li>
+		<li><a href="#">Volunteers</a></li>
+	</ul>
+	</li>
+	<div th:switch="${role}">
+	<li><a th:case="'ADMIN'" th:href="@{/ClientHome}">Admin</a></li>
+<!--	<li><a th:case="'VENDOR'" th:href="@{/vendorHome}">Vendor</a></li>
+	<li><a th:case="'DONOR'" th:href="@{/donorHome}">Donor</a></li>
+	<li><a th:case="'CLIENT'" th:href="@{/ClientHome}">Client</a></li>
+	<li><a th:case="'VOLUNTEER'" th:href="@{/volunteerHome}">Volunteer</a></li>-->
+	<li><a th:case="*" ></a></li>
+	</div>
+	<li><a th:href="@{/registration}">Register</a></li>
+	<li><a th:href="@{/login}">Login</a></li>
+	<li><a th:href="@{/contact}">Contact</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+
+<div class="fh5co-hero">
+<div class="fh5co-overlay">&nbsp;</div>
+
+<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5"><img th:src="@{/images/indexMainPic.jpg}" />
+<div class="desc animate-box">
+<h2><strong>PayForward</strong></h2>
+<span>A locally based, community driven solution for people in need of a hand</span> <span><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span></div>
+</div>
+</div>
+<!-- end:header-top -->
+
+<div id="fh5co-features">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<div class="feature-left">
+<div class="feature-copy">
+<h3>Give Locally</h3>
+
+<p>The PayForward community gives you the chance to give to local causes. You can see and visit the places and people that are the recipients of your donations.</p>
+
+<p><a href="#">Learn More</a></p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="feature-left">
+<div class="feature-copy">
+<h3>Community Based</h3>
+
+<p>PayForward allows you to get involved personally with those in need of a helping hand. Our community grows stronger when we work on a one-on-one or small group basis.</p>
+
+<p><a href="#">Learn More</a></p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="feature-left">
+<div class="feature-copy">
+<h3>Ways to help</h3>
+
+<p>PayForward gives you the choice of donating monetarily or with goods, to volunteer for one of our many different projects, or to become a vendor if you are a business that has excess but does not know how to distribute the bounty!</p>
+
+<p><a href="#">Learn More</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="fh5co-section-gray" id="fh5co-content-section">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+<h3>Our Team</h3>
+
+<p>Meet Our Team!</p>
+</div>
+</div>
+</div>
+</div>
+<!-- fh5co-content-section -->
+
+<div id="fh5co-services-section">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+<h3>Our Projects. Support Us</h3>
+
+<p>&ldquo;You have not lived today until you have done something for someone who can never repay you.&rdquo; ? John Bunyan</p>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row text-center">
+<div class="col-md-4 col-sm-4">
+<div class="services animate-box">
+<h3>Coats For Kids</h3>
+
+<p>Every fall our coat donations received through the year are matched to a local child.</p>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-4">
+<div class="services animate-box">
+<h3>Operation: Kids Code</h3>
+
+<p>This fun project allows our local middle school kids to pair with a generous volunteer developer for a small project. These projects are then demonstrated in a yearly fair.</p>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-4">
+<div class="services animate-box">
+<h3>Community Supper</h3>
+
+<p>Volunteers gather at several locations each week to provide meals and to eat with local clients that are in need of a meal.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END Projects -->
+
+<footer>
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-md-offset-3 text-center">
+<p class="fh5co-social-icons">&nbsp;</p>
+
+<p>A. Saladin <a href="#">PayForward 2019</a></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- END fh5co-page --></div>
+<!-- END fh5co-wrapper --><!-- jQuery --><script th:src="@{js/jquery.min.js}"></script><!-- jQuery Easing --><script th:src="@{js/jquery.easing.1.3.js}"></script><!-- Bootstrap --><script th:src="@{js/bootstrap.min.js}"></script><!-- Waypoints --><script th:src="@{js/jquery.waypoints.min.js}"></script><script th:src="@{js/sticky.js}"></script><!-- Stellar --><script th:src="@{js/jquery.stellar.min.js}"></script><!-- Superfish --><script th:src="@{js/hoverIntent.js}"></script><script th:src="@{js/superfish.js}"></script><!-- Main JS --><script th:src="@{js/main.js}"></script></body>
+</html>

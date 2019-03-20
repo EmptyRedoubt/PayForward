@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>PayForward Login</title>
+	<link rel="stylesheet" th:href="@{/css/login.css}" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form method="get" th:action="@{/registration}"><button class="btn btn-md btn-warning btn-block" type="Submit">Go To Registration Page</button></form>
+
+<div class="container"><img alt="Logo" class="img-responsive center-block" height="300" th:src="@{/images/login-icon.png}" width="150" />
+<form width="600" class="form-signin" method="post" th:action="@{/login}" th:object="${user}">
+<h3 class="form-signin-heading" th:text="Welcome">&nbsp;</h3>
+<br />
+<input class="form-control" id="emailAddress" name="emailAddress" th:placeholder="Email" type="text" /><br />
+<input class="form-control" id="password" name="password" th:placeholder="Password" type="password" />
+<div align="center" th:if="${param.error}">
+<p style="color: rgb(255, 28, 25); font-size: 20px;">Email or Password invalid, please verify</p>
+</div>
+</br>
+<button class="btn btn-lg btn-primary btn-block" name="Submit" th:text="Login" type="Submit" value="Login"></button></form>
+</div>
+</body>
+</html>
